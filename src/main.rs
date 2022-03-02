@@ -1,4 +1,5 @@
 use rand::prelude::*;
+use std::cmp::Ordering;
 
 const TRIES: u64 = 20_000_000; // Amount of tries
 const DOORS: u64 = 3;          // Amoutn of doors to choose from
@@ -53,12 +54,10 @@ fn main() {
     println!("No switch: {} losses, {} wins, win ratio: {:.3}%", losses_noswitch, wins_noswitch, noswitch_winratio * 100.0);
 
     println!("Winner is: {}", {
-        if wins_switch > wins_noswitch {
-            "Switch"
-        } else if wins_switch < wins_noswitch {
-            "No switch"
-        } else {
-            "stalemate"
+        match wins_switch.cmp(&wins_noswitch) {
+            Ordering::Greater => "Switch",
+            Ordering::Less => "No switch",
+            Ordering::Equal => "Stalemate???"
         }
     })
 }
