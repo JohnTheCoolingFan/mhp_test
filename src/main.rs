@@ -35,14 +35,18 @@ fn main() {
             unopened = rng.gen::<u64>() % DOORS;
         }
 
-        if prize == guess {      // Switch loss, No switch win
+        if prize == guess {            // Switch loss, No switch win
             wins_noswitch += 1;
             losses_switch += 1;
             println!("Switch: Loss, No switch: Win");
-        } else {                 // No switch loss, Switch win
+        } else if prize == unopened {  // No switch loss, Switch win
             wins_switch += 1;
             losses_noswitch += 1;
             println!("Switch: Win,  No switch: Loss");
+        } else {                       // Both lose, Mony Hall opened a door with a prize, someone gets fired
+            losses_switch += 1;
+            losses_noswitch += 1;
+            println!("Switch: Loss, No switch: Loss");
         }
     }
 
