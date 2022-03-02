@@ -1,7 +1,7 @@
 use rand::prelude::*;
 use std::cmp::Ordering;
 
-const TRIES: u64 = 200_000; // Amount of tries
+const TRIES: u64 = 20_000_000; // Amount of tries
 const DOORS: u64 = 3;          // Amoutn of doors to choose from
 
 fn main() {
