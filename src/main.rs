@@ -43,7 +43,7 @@ fn main() {
             wins_switch += 1;
             losses_noswitch += 1;
             println!("Switch: Win,  No switch: Loss");
-        } else {                       // Both lose, Mony Hall opened a door with a prize, someone gets fired
+        } else {                       // Both lose, Monty Hall opened a door with a prize, someone gets fired
             losses_switch += 1;
             losses_noswitch += 1;
             println!("Switch: Loss, No switch: Loss");
