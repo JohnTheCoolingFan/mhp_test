@@ -29,8 +29,9 @@ fn main() {
         guess = rng.gen::<u64>() % DOORS;
         unopened = rng.gen::<u64>() % DOORS;
 
-        // Make sure that there are two unopened doors
-        while unopened == guess {
+        // Make sure that there are two unopened doors and that door wit ha prize wasn't opened
+        // Second check doesn't affect probability for some reason...
+        while unopened == guess || (unopened != prize && guess != prize) {
             unopened = rng.gen::<u64>() % DOORS;
         }
 
