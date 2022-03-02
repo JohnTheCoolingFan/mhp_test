@@ -1,7 +1,7 @@
 use rand::prelude::*;
 use std::cmp::Ordering;
 
-const TRIES: u64 = 20_000_000; // Amount of tries
+const TRIES: u64 = 200_000; // Amount of tries
 const DOORS: u64 = 3;          // Amoutn of doors to choose from
 
 fn main() {
@@ -17,7 +17,7 @@ fn main() {
     let mut unopened: u64; // Number of a door "Monty Hall" left unopened (aside from player's guess)
 
     // Initialize random number generator
-    let mut rng = rand::thread_rng();
+    let mut rng = rdrand::RdRand::new().unwrap();
 
     println!("Total amount of tries: {}\nTotal amount of doors: {}\n", TRIES, DOORS);
 
